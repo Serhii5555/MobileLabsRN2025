@@ -1,13 +1,17 @@
-Installation & Setup
-Clone the repository
+## Installation & Setup
 
-sh
+### Clone the Repository
+```sh
+git clone https://github.com/Serhii5555/MobileLabsRN2025
 cd FirstMobileApp
-Install dependencies
+```
 
-sh
+### Install Dependencies
+```sh
 npm install
-Start the Expo development server
+```
 
-sh
+### Run on Android Emulator/Device
+```sh
 npm run android
+```
