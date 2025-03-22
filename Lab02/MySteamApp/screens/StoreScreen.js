@@ -11,7 +11,7 @@ const games = [
 ];
 
 const StoreScreen = () => {
-  const renderItem = ({ item }) => <GameCard>{item.title}</GameCard>;
+  const renderItem = ({ item }) => <GameCard title={item.title} />;
 
   return (
     <Container>

@@ -2,13 +2,19 @@ import React, { createContext, useState, useContext } from "react";
 import { ThemeProvider } from "styled-components/native";
 
 const lightTheme = {
-  background: "#fff",
+  navigator_icon_active: "#FFF",
+  navigator_icon_inactive: "#4B5664",
+  navigator: "#DEDEDE",
+  background: "#FFF",
   text: "#000",
   primary_color: "#303649",
   secondary_color: "#31BCFC",
 };
 
 const darkTheme = {
+  navigator_icon_active: "#FFF",
+  navigator_icon_inactive: "#4B5664",
+  navigator: "#12141C",
   background: "#20242c",
   text: "#fff",
   primary_color: "#303649",
@@ -17,18 +23,23 @@ const darkTheme = {
 
 const ThemeContext = createContext();
 
-export const useTheme = () => useContext(ThemeContext);
+export const useTheme = () => {
+  const { theme: themeName, toggleTheme } = useContext(ThemeContext);
+  const theme = themeName === "light" ? lightTheme : darkTheme;
+  return { theme, toggleTheme };
+};
 
 export const ThemeProviderWrapper = ({ children }) => {
   const [theme, setTheme] = useState("dark");
+
   const toggleTheme = () =>
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
 
+  const currentTheme = theme === "light" ? lightTheme : darkTheme;
+
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
-        {children}
-      </ThemeProvider>
+      <ThemeProvider theme={currentTheme}>{children}</ThemeProvider>
     </ThemeContext.Provider>
   );
 };
