@@ -39,7 +39,7 @@ const GameCarousel = ({ games }) => {
 const CarouselContainer = styled.View`
   margin-vertical: 12px;
   margin-left: 20px;
-  width: 350px;
+  width: auto;
   height: 230px;
 `;
 
@@ -49,6 +49,7 @@ const GameCard = styled(ImageBackground)`
   border-radius: 16px;
   overflow: hidden;
   justify-content: space-between;
+  margin-right: 16px;
   padding: 12px;
 `;
 

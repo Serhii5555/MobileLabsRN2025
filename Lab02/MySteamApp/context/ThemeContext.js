@@ -7,8 +7,8 @@ const lightTheme = {
   navigator: "#DEDEDE",
   background: "#FFF",
   text: "#000",
-  primary_color: "#303649",
-  secondary_color: "#31BCFC",
+  primary_color: "#999FB7",
+  secondary_color: "#7FD6FE",
 };
 
 const darkTheme = {
@@ -17,7 +17,7 @@ const darkTheme = {
   navigator: "#12141C",
   background: "#1C202C",
   text: "#FFF",
-  primary_color: "#555B6F",
+  primary_color: "#303649",
   secondary_color: "#31BCFC",
 };
 

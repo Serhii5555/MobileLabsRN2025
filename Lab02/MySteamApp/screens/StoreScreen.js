@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components/native";
 import { ScreenHeader } from "../components/ScreenHeader";
 import { GameCarousel } from "../components/GameCarousel";
+import ButtonCarousel from "../components/ButtonCarousel";
+import GameDisplayList from "../components/GameDisplayList";
 
-const games = [
+const carousel_games = [
   {
     id: 1,
     name: "Dead By Daylight",
@@ -27,7 +29,79 @@ const games = [
   },
 ];
 
+const buttons = ["Top Sellers", "Free to Play", "Early Access", "Steam Deck"];
+
+const games = [
+  {
+    id: 1,
+    logo: "https://cdn-l-thewitcher.cdprojektred.com/meta/TW3NG_thumbnail_en.png",
+    name: "Game 1",
+    platform: [
+      { name: "Mac", icon: "apple" },
+      { name: "Windows", icon: "windows" },
+    ],
+    basePrice: "$60",
+    newPrice: "$50",
+    salePercent: 20,
+  },
+  {
+    id: 2,
+    logo: "https://cdn-l-thewitcher.cdprojektred.com/meta/TW3NG_thumbnail_en.png",
+    name: "Game 2",
+    platform: [
+      { name: "Linux", icon: "linux" },
+      { name: "Windows", icon: "windows" },
+    ],
+    basePrice: "$40",
+    newPrice: "$35",
+    salePercent: 10,
+  },
+  {
+    id: 3,
+    logo: "https://cdn-l-thewitcher.cdprojektred.com/meta/TW3NG_thumbnail_en.png",
+    name: "Game 2",
+    platform: [
+      { name: "Linux", icon: "linux" },
+      { name: "Windows", icon: "windows" },
+    ],
+    basePrice: "$40",
+    newPrice: "$35",
+    salePercent: 10,
+  },
+  {
+    id: 4,
+    logo: "https://cdn-l-thewitcher.cdprojektred.com/meta/TW3NG_thumbnail_en.png",
+    name: "Game 2",
+    platform: [{ name: "Windows", icon: "windows" }],
+    newPrice: "$35",
+    basePrice: "$35",
+  },
+  {
+    id: 5,
+    logo: "https://cdn-l-thewitcher.cdprojektred.com/meta/TW3NG_thumbnail_en.png",
+    name: "Game 2",
+    platform: [{ name: "Windows", icon: "windows" }],
+    basePrice: "$40",
+    newPrice: "$35",
+    salePercent: 10,
+  },
+];
+
 const StoreScreen = ({ route }) => {
+  const [gameList, setGameList] = useState(games);
+
+  const loadMoreGames = () => {
+    setGameList((prevGames) => {
+      const maxId = Math.max(...prevGames.map((game) => game.id));
+      const newGames = prevGames.map((game, index) => ({
+        ...game,
+        id: maxId + index + 1,
+      }));
+
+      return [...prevGames, ...newGames];
+    });
+  };
+
   return (
     <Container>
       <ScreenHeader
@@ -35,13 +109,16 @@ const StoreScreen = ({ route }) => {
         iconName="steam"
         showSearch={true}
       />
-      <GameCarousel games={games} />;
+      <GameCarousel games={carousel_games} />;
+      <ButtonCarousel buttons={buttons} showSearchButton={false} />
+      <GameDisplayList games={gameList} loadMoreGames={loadMoreGames} />
     </Container>
   );
 };
 
 // Styled components
 const Container = styled.View`
+  flex: 1;
   padding-top: 44px;
   background-color: ${({ theme }) => theme.background};
 `;
