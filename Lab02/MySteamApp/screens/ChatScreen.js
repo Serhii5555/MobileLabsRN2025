@@ -1,26 +1,22 @@
 import React from "react";
 import styled from "styled-components/native";
+import { ScreenHeader } from "../components/ScreenHeader";
 
 const ChatScreen = ({ route }) => {
   return (
     <Container>
-      <Title>{route.name} Screen</Title>
+      <ScreenHeader
+        title={`${route.name}`}
+        iconName="steam"
+        showSearch={true}
+      />
     </Container>
   );
 };
 
-// Styled components
 const Container = styled.View`
-  flex: 1;
-  justify-content: center;
-  align-items: center;
+  padding-top: 44px;
   background-color: ${({ theme }) => theme.background};
-`;
-
-const Title = styled.Text`
-  color: ${({ theme }) => theme.text};
-  font-size: 24px;
-  font-weight: bold;
 `;
 
 export default ChatScreen;

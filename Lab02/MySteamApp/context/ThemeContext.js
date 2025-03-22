@@ -2,8 +2,8 @@ import React, { createContext, useState, useContext } from "react";
 import { ThemeProvider } from "styled-components/native";
 
 const lightTheme = {
-  navigator_icon_active: "#FFF",
-  navigator_icon_inactive: "#4B5664",
+  navigator_icon_active: "#000",
+  navigator_icon_inactive: "#738399",
   navigator: "#DEDEDE",
   background: "#FFF",
   text: "#000",
@@ -15,9 +15,9 @@ const darkTheme = {
   navigator_icon_active: "#FFF",
   navigator_icon_inactive: "#4B5664",
   navigator: "#12141C",
-  background: "#20242c",
-  text: "#fff",
-  primary_color: "#303649",
+  background: "#1C202C",
+  text: "#FFF",
+  primary_color: "#555B6F",
   secondary_color: "#31BCFC",
 };
 
