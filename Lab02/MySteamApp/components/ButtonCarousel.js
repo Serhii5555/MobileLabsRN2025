@@ -3,6 +3,7 @@ import { FlatList, TouchableOpacity } from "react-native";
 import styled from "styled-components/native";
 import { useTheme } from "../context/ThemeContext";
 import Feather from "@expo/vector-icons/Feather";
+import { Text } from "react-native-gesture-handler";
 
 const ButtonCarousel = ({ buttons, showSearchButton }) => {
   const { theme } = useTheme();
@@ -34,7 +35,9 @@ const ButtonCarousel = ({ buttons, showSearchButton }) => {
                 active={activeIndex === index}
                 theme={theme}
               >
-                <ButtonText active={activeIndex === index}>{item}</ButtonText>
+                <ButtonText active={activeIndex === index}>
+                  <Text>{item}</Text>
+                </ButtonText>
               </Button>
             )}
           </ButtonWrapper>
@@ -48,8 +51,8 @@ const ButtonCarousel = ({ buttons, showSearchButton }) => {
 // Styled Components
 const CarouselContainer = styled.View`
   margin-top: 18px;
-  margin-bottom: 12px;
-  margin-left: 12px;
+  margin-bottom: 18px;
+  margin-left: 6px;
 `;
 
 const ButtonWrapper = styled.View`
@@ -59,7 +62,7 @@ const ButtonWrapper = styled.View`
 const Button = styled(TouchableOpacity)`
   background-color: ${({ active, theme }) =>
     active ? theme.secondary_color : theme.primary_color};
-  padding-horizontal: 16px;
+  padding: 0 16px;
   height: 38px;
   justify-content: center;
   align-items: center;
@@ -67,7 +70,7 @@ const Button = styled(TouchableOpacity)`
 `;
 
 const ButtonText = styled.Text`
-  font-family: ABeeZee;
+  font-family: "ABeeZee";
   font-weight: 400;
   font-size: 14px;
   line-height: 22px;

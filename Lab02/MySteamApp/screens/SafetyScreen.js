@@ -14,7 +14,6 @@ const SafetyScreen = ({ route }) => {
   );
 };
 
-// Styled components
 const Container = styled.View`
   padding-top: 44px;
   background-color: ${({ theme }) => theme.background};

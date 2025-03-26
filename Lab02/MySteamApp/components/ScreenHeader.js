@@ -3,6 +3,7 @@ import styled from "styled-components/native";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import Feather from "@expo/vector-icons/Feather";
 import { useTheme } from "../context/ThemeContext";
+import { TouchableOpacity } from "react-native";
 
 const ScreenHeader = ({ title, iconName, showSearch }) => {
   const { theme } = useTheme();
@@ -14,7 +15,9 @@ const ScreenHeader = ({ title, iconName, showSearch }) => {
         <Title>{title}</Title>
       </Left>
       {showSearch && (
-        <SearchIcon name="search" size={24} color={theme.primary_color} />
+        <TouchableOpacity>
+          <SearchIcon name="search" size={24} color={theme.primary_color} />
+        </TouchableOpacity>
       )}
     </Header>
   );
@@ -40,7 +43,7 @@ const Icon = styled(FontAwesome5)`
 
 const Title = styled.Text`
   color: ${({ theme }) => theme.text};
-  font-family: ABeeZee;
+  font-family: "ABeeZee";
   font-weight: 400;
   font-size: 28px;
   line-height: 39px;

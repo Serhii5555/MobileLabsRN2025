@@ -61,7 +61,7 @@ const GameDisplayList = ({ games, loadMoreGames }) => {
       renderItem={renderItem}
       keyExtractor={(item) => item.id.toString()}
       onEndReached={loadMoreGames}
-      onEndReachedThreshold={0.1}
+      onEndReachedThreshold={0.5}
       showsVerticalScrollIndicator={false}
     />
   );
@@ -72,7 +72,7 @@ const GameContainer = styled.View`
   height: 70px;
   flex-direction: row;
   align-items: center;
-  padding-horizontal: 16px;
+  padding: 0 16px;
 `;
 
 const GameLogoContainer = styled.View`
@@ -94,7 +94,7 @@ const GameInfoContainer = styled.View`
 `;
 
 const GameName = styled.Text`
-  width: 141px;
+  width: 300px;
   height: 22px;
   font-family: "ABeeZee";
   font-weight: 400;
@@ -160,7 +160,7 @@ const NewPrice = styled.Text`
 
 const SalePercent = styled.Text`
   width: auto;
-  padding-horizontal: 6px;
+  padding: 0 6px;
   height: 20px;
   background-color: rgba(0, 212, 74, 0.68);
   font-family: "PingFang SC";

@@ -2,6 +2,7 @@ import React from "react";
 import { FlatList, ImageBackground } from "react-native";
 import styled from "styled-components/native";
 import Entypo from "@expo/vector-icons/Entypo";
+import { Text } from "react-native-gesture-handler";
 
 const GameCarousel = ({ games }) => {
   return (
@@ -15,8 +16,12 @@ const GameCarousel = ({ games }) => {
         renderItem={({ item }) => (
           <GameCard source={{ uri: item.image }}>
             <InfoContainer>
-              <GameTitle>{item.name}</GameTitle>
-              <GameDescription>{item.description}</GameDescription>
+              <GameTitle>
+                <Text>{item.name}</Text>
+              </GameTitle>
+              <GameDescription>
+                <Text>{item.description}</Text>
+              </GameDescription>
               <PriceContainer>
                 {item.discount > 0 && (
                   <DiscountText>-{item.discount}%</DiscountText>
@@ -37,10 +42,10 @@ const GameCarousel = ({ games }) => {
 
 // Styled Components
 const CarouselContainer = styled.View`
-  margin-vertical: 12px;
-  margin-left: 20px;
+  margin: 12px 0;
   width: auto;
   height: 230px;
+  margin-left: 16px;
 `;
 
 const GameCard = styled(ImageBackground)`
@@ -80,7 +85,7 @@ const GameDescription = styled.Text`
 
 const PriceContainer = styled.View`
   margin-top: 6px;
-  padding-horizontal: 8px;
+  padding: 0 8px;
   height: 22px;
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 6px;
@@ -94,7 +99,7 @@ const PriceContainer = styled.View`
 const DiscountText = styled.Text`
   background-color: green;
   color: white;
-  font-family: "PingFang SC";
+  font-family: "sans-serif";
   font-weight: 300;
   font-size: 12px;
   line-height: 18px;
@@ -109,7 +114,7 @@ const DiscountText = styled.Text`
 const OldPrice = styled.Text`
   color: gray;
   text-decoration: line-through;
-  font-family: "PingFang SC";
+  font-family: "sans-serif";
   font-weight: 500;
   font-size: 12px;
   line-height: 18px;
@@ -120,7 +125,7 @@ const OldPrice = styled.Text`
 const NewPrice = styled.Text`
   margin-left: 4px;
   color: white;
-  font-family: "PingFang SC";
+  font-family: "sans-serif";
   font-weight: 300;
   font-size: 12px;
   line-height: 18px;
