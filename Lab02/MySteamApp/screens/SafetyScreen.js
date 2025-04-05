@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components/native";
 import { ScreenHeader } from "../components/ScreenHeader";
+import SegmentedControl from "../components/SegmentedControl";
 
 const SafetyScreen = ({ route }) => {
   return (
@@ -10,6 +11,7 @@ const SafetyScreen = ({ route }) => {
         iconName="steam"
         showSearch={false}
       />
+      <SegmentedControl options={["Guard", "Confirmations"]} />
     </Container>
   );
 };
