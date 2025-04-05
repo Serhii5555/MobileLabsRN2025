@@ -1,4 +1,5 @@
 import React from "react";
+import { Image } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Feather from "@expo/vector-icons/Feather";
@@ -74,8 +75,15 @@ const AppNavigator = () => {
           name="Profile"
           component={ProfileScreen}
           options={{
-            tabBarIcon: ({ color, size }) => (
-              <Feather name="user" size={size} color={color} />
+            tabBarIcon: ({ color, size, focused }) => (
+              <Image
+                source={require("../assets/avatar.jpg")}
+                style={{
+                  width: size,
+                  height: size,
+                  borderRadius: size / 2,
+                }}
+              />
             ),
             tabBarLabel: () => null,
           }}

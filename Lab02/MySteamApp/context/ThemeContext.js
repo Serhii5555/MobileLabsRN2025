@@ -14,6 +14,7 @@ const lightTheme = {
   segmented_control: "#A8AEC0",
   unread_badge: "#CFCFCF",
   chat_message_color: "#586570",
+  button_list: "#A8AEC0",
 };
 
 const darkTheme = {
@@ -28,6 +29,7 @@ const darkTheme = {
   segmented_control: "#303649",
   unread_badge: "#FFFFFF",
   chat_message_color: "#7B8D9D",
+  button_list: "#202532",
 };
 
 const ThemeContext = createContext();

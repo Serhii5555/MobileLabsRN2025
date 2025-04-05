@@ -2,13 +2,36 @@ import React from "react";
 import styled from "styled-components/native";
 import { useTheme } from "../context/ThemeContext";
 import { Button } from "react-native";
+import ProfileIcon from "../components/ProfileIcon";
+import ButtonList from "../components/ButtonList";
 
 const ProfileScreen = ({ route }) => {
   const { toggleTheme } = useTheme();
 
   return (
     <Container>
-      <Title>{route.name} Screen</Title>
+      <ProfileIcon
+        picture={require("../assets/avatar.jpg")}
+        fullName="Beilakh Serhii"
+        group="IPZ-23-3"
+        statusColor="#00D44B"
+      />
+      <Margin></Margin>
+      <ButtonList
+        buttons={[
+          { text: "Settings", onPress: toggleTheme },
+          { text: "Logout" },
+        ]}
+      />
+      <Margin></Margin>
+      <Margin></Margin>
+      <Margin></Margin>
+      <Margin></Margin>
+      <Margin></Margin>
+      <Margin></Margin>
+      <Margin></Margin>
+      <Margin></Margin>
+
       <Button title="Toggle Theme" onPress={toggleTheme} />
     </Container>
   );
@@ -16,15 +39,11 @@ const ProfileScreen = ({ route }) => {
 
 const Container = styled.View`
   flex: 1;
-  justify-content: center;
-  align-items: center;
   background-color: ${({ theme }) => theme.background};
 `;
 
-const Title = styled.Text`
-  color: ${({ theme }) => theme.text};
-  font-size: 24px;
-  font-weight: bold;
+const Margin = styled.View`
+  margin-top: 40px;
 `;
 
 export default ProfileScreen;
