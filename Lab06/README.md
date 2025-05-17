@@ -19,8 +19,8 @@ npm run android
 
 ![screenshot3](screenshots/screenshot7.png)
 
-![screenshot4](screenshots/screenshot4.png)
+![screenshot4](screenshots/screenshot4.PNG)
 
-![screenshot5](screenshots/screenshot5.png)
+![screenshot5](screenshots/screenshot5.PNG)
 
-![screenshot6](screenshots/screenshot6.png)
+![screenshot6](screenshots/screenshot6.PNG)
