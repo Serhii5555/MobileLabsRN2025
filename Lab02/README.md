@@ -3,7 +3,7 @@
 Install dependencies
 
 ``` sh
-npm install
+npm install --legacy-peer-deps
 ```
 Start the Expo development server
 
@@ -22,3 +22,13 @@ npm run android
 ![screenshot4](screenshots/screenshot4.png)
 
 ![screenshot5](screenshots/screenshot5.png)
+
+![screenshot6](screenshots/screenshot6.png)
+
+![screenshot7](screenshots/screenshot7.png)
+
+![screenshot8](screenshots/screenshot8.png)
+
+![screenshot9](screenshots/screenshot9.png)
+
+![screenshot10](screenshots/screenshot10.png)
